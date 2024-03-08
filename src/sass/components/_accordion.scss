@@ -1,0 +1,188 @@
+@use '../base';
+
+.accordion__section {
+  margin-top: 5.8rem;
+  margin-bottom: 5rem;
+}
+
+.accordion {
+  margin-top: 1.8rem;
+  @media screen and (min-width: 67.5rem) {
+    flex: 1 1 60%;
+  }
+}
+
+/*****************************************
+        ACCORDION HEADING WRAPPER - TITLE
+ *****************************************/
+.accordion__title {
+  text-align: center;
+  font-family: base.$secondary-font;
+  font-size: base.calculateRem(24);
+  color: base.$mid-mid-grey;
+  font-weight: 900;
+
+  @media screen and (min-width: 38.75rem) {
+    font-size: base.calculateRem(40);
+  }
+  @media screen and (min-width: 67.5rem) {
+   text-align: left;
+  }
+}
+
+.accordion__title__wrapper {
+  margin-top: 0.5rem;
+  @media screen and (min-width: 67.5rem) {
+    flex: 1 1 25%;
+  }
+}
+
+
+/*********************************************
+        ACCORDION HEADING AND WRAPPER - TITLE
+                          END
+ **********************************************/
+
+
+
+.accordion__section__heading {
+  text-align: center;
+  font-family: base.$secondary-font;
+  font-size: base.calculateRem(32);
+  color: base.$mid-mid-grey;
+  font-weight: 900;
+  @media screen and (min-width: 38.75rem) {
+    font-size: base.calculateRem(48);
+  }
+}
+/*
+.accordion-header {
+ 
+   &:hover{
+     background-color: turquoise;
+   } 
+
+}
+*/
+.accordion__wrapper {
+  padding: 2rem;
+  margin: auto;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: 1px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+
+  @media screen and (min-width: 38.75rem) {
+    padding: 2.4375rem;
+  }
+
+  @media screen and (min-width: 67.5rem) {
+    display: flex;
+    align-items: flex-start;
+    padding: 2.4375rem 10.3125rem;
+  }
+}
+
+.accordion-item {
+  border: 1px solid base.$grey-accordion;
+  background-color: base.$grey-accordion;
+  padding: 1rem 2rem 2rem;
+  margin-bottom: 1rem;
+
+  &:first-of-type {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+  &:focus-within {
+    background-color: base.$peach;
+  }
+}
+
+.accordion-body {
+  font-size: base.calculateRem(15);
+  line-height: 1.75;
+  color: base.$mid-mid-grey;
+}
+
+/**************************************
+            ACCORDION BUTTON START 
+ **************************************/
+
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: base.calculateRem(18);
+  color: #212529;
+  text-align: left;
+  background-color: base.$grey-accordion;
+  border: 0;
+  border-radius: 0;
+  overflow-anchor: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+    border-radius 0.15s ease;
+
+  &::after {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    content: "";
+    background-image: url("../../assets/icons/chevron.svg");
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:not(.collapsed) {
+    color: #0c63e4;
+    background-color: base.$grey-accordion;
+    // box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+  }
+
+  &:not(.collapsed)::after {
+    background-image: url("../../assets/icons/chevron.svg");
+    transform: rotate(-180deg);
+  }
+
+  &:focus, &:hover {
+    z-index: 3;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    background-color: base.$peach;
+  }
+
+  @media screen and (min-width: 38.75rem) {
+    font-size: base.calculateRem(24);
+  }
+}
+
+/******************************************
+                ACCORDION BUTTON
+                       END 
+ ******************************************/
+
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}

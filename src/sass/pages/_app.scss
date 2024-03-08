@@ -1,0 +1,19 @@
+@use '../base';
+.App {
+  overflow-x: hidden;
+  //max-width: 1440px;
+  margin: auto;
+}
+
+header,
+.main {
+  max-width: 1440px;
+  margin: auto;
+}
+.main__container {
+  outline: none;
+}
+//About page
+.main__about {
+  margin-top: -3.5rem;
+}

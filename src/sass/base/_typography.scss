@@ -1,0 +1,5 @@
+@use './variables' as fontfamily;
+
+body {
+    font-family: fontfamily.$primary-font;
+}

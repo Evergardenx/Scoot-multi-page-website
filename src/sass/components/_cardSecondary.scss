@@ -1,0 +1,253 @@
+@use '../base';
+
+.secondary__cards {
+  padding: 0 2rem;
+
+  @media screen and (min-width: 67.5rem) {
+    padding: 2.5rem 0 0 0;
+  }
+}
+
+.cards2 {
+  position: relative;
+  margin-bottom: 7.5rem;
+
+  &:first-child,
+  &:last-child,
+  &:nth-child(2) {
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 85%;
+      background-repeat: no-repeat;
+      background-size: auto;
+      top: 0;
+    }
+  }
+
+  &:first-child,
+  &:last-child {
+    &::before {
+      background-image: url("../../assets/patterns/left-downward-arrow.svg");
+      background-position: 0% 20%;
+      right: -2rem;
+    }
+  }
+
+  &:last-child {
+    &::before {
+      background-position: -25% 0%;
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      background-image: url("../../assets/patterns/right-arrow.svg");
+      background-position: 100% 0%;
+      left: -2rem;
+    }
+  }
+
+  @media screen and (min-width: 38.75rem) {
+    &:first-child {
+      &::before {
+        background-position: 0% 50%;
+      }
+    }
+
+    &:last-child {
+      &::before {
+        background-position: -100% 0%;
+        background-size: 135% 30%;
+      }
+    }
+
+    /*****  PSEUDO AFTER ALL 3 CARDS *****/
+    &:first-child,
+    &:last-child,
+    &:nth-child(2) {
+      &::after {
+        position: absolute;
+        content: "";
+        background-image: url("../../assets/patterns/circle.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 50%;
+        height: 50%;
+        z-index: -1;
+        right: -40%;
+        top: 5%;
+      }
+    }
+
+    /***** END --------  PSEUDO AFTER ALL 3 CARDS -------- *****/
+
+    &:nth-child(2) {
+      &::before {
+        background-position: -35% 0%;
+      }
+
+      &::after {
+        right: 85%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 67.5rem) {
+    display: flex;
+
+    /*****  PSEUDO AFTER ALL 3 CARDS *****/
+    &:first-child,
+    &:last-child,
+    &:nth-child(2) {
+      &::after {       
+        width: 100%;
+        height: 100%;       
+        right: 0px;
+        top: 0;
+      }
+    }
+
+    /***** END --------  PSEUDO AFTER ALL 3 CARDS -------- *****/
+
+    &:first-child,
+    &:last-child {
+      flex-direction: row-reverse;
+      padding-left: 10.3125rem;
+      &::before {
+        background-position: 100% 100%;
+      }
+
+      &::after {
+        background-position: 140% 50%;
+      }
+    }
+
+    &:last-child {
+      &::before {
+        background-size: 40% 30%;
+      }
+    }
+
+    &:nth-child(2) {
+      padding-right: 10.3125rem;
+      &::before {
+        background-position: -10% 0%;
+      }
+      &::after {
+        background-position: -35% 0%;
+      }
+    }
+  }
+}
+
+.cards2__image__wrapper {
+  @media screen and (min-width: 67.5rem) {
+    flex: 1 1 50%;
+  }
+}
+
+.cards2__content__wrapper {
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: 38.75rem) {
+    max-width: 35.8125rem;
+    margin: 3rem auto;
+  }
+
+  @media screen and (min-width: 67.5rem) {
+    margin-top: 4rem;
+    flex: 1 1 50%;
+    max-width: 27.8125rem;
+  }
+}
+
+.cards2__image {
+  max-width: 27.8125rem;
+  margin: auto;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.cards2__title {
+  color: base.$mid-mid-grey;
+  font-size: base.calculateRem(32);  
+  font-family: base.$secondary-font;
+  letter-spacing: -1.43px;
+  line-height: 1.1;
+
+  @media screen and (min-width: 38.75rem) {
+    font-size: base.calculateRem(48);
+    max-width: 28.5625rem;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 67.5rem) {
+    text-align: left;   
+    letter-spacing: -2.14px;
+  }
+}
+
+.cards2__content {
+  font-size: base.calculateRem(15);
+  color: base.$mid-lt-grey;
+  margin-top: 2rem;
+  @media screen and (min-width: 38.75rem) {
+    text-align: center;
+  }
+  @media screen and (min-width: 68.5rem) {
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+}
+
+/* ABOUT PAGE - SECONDARY SECTION - CARDS
+The home page has three cards and this (about) page has 2 cards
+On the home page the images of the first and third(last) card where on
+the same side but the logic used affected this (about) page which has 2 cards.
+The last (second) card image was supposed to stay on the opposite  side  of the
+first card but now that has been cancelled as it has taken the styles of the last child
+To overide - solution below was used.
+*/
+.secondary__cards__about {
+  .cards2 {
+    &:first-child {
+      &::before {
+        background-image: url("../../assets/patterns/left-upward-arrow.svg");
+        background-position: 0% 40%;
+      }
+    }
+    @media screen and (min-width: 38.75rem) {
+      &:last-child {
+        &::before {
+          background-position: 100% 6%;
+          background-size: contain;
+          width: 60%;
+        }
+      }
+    }
+
+    @media screen and (min-width: 67.5rem) {
+
+      &:first-child {
+        &::before {          
+          background-position: 100% 100%;
+        }
+      }
+
+      &:last-child {
+        flex-direction: row;
+        &::before {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+.learn__hide--btn {
+  display: none;
+}

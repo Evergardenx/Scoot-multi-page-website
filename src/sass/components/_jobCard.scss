@@ -1,0 +1,75 @@
+@use '../base';
+
+.card__job__info {
+  background-color: base.$grey-accordion;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 0.5rem;
+
+  @media screen and (min-width: 38.75rem) {
+    flex-direction: row;
+    padding: 2rem 3.625rem;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 67.5rem) {
+  }
+}
+
+.cards__jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media screen and (min-width: 38.75rem) {
+    max-width: 43.0625rem;
+    padding: 0 2rem;
+  }
+  @media screen and (min-width: 67.5rem) {
+      max-width: 69.375rem;
+     // padding: 0 10.3125rem;
+  }
+}
+
+.apply {
+  background-color: base.$yellow;
+  border: .25rem solid transparent;
+  font-family: base.$secondary-font;
+  text-decoration: none;
+  color: base.$white;
+  width: 15.4375rem;
+  max-width: 90%;
+  text-align: center;
+  padding: 0.85rem;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    border: .25rem solid base.$yellow;
+    background-color: base.$white;
+    color: base.$mid-mid-grey;
+    cursor: pointer;
+    outline: dashed base.$yellow;
+    outline-offset: 0.25em;
+  }
+}
+.job__title {
+  font-size: base.calculateRem(18);
+  font-family: base.$secondary-font;
+  color: base.$mid-mid-grey;
+}
+.job__area {
+  font-size: base.calculateRem(15);
+  color: base.$mid-mid-grey;
+  padding: 0.5rem;
+  //max-width: 90%;
+  text-align: center;
+
+  @media screen and (min-width: 38.75rem) {
+    text-align: left;
+  }
+  @media screen and (min-width: 67.5rem) {
+  }
+}

@@ -1,0 +1,66 @@
+@use '../base';
+.aside {
+  background-color: base.$mid-mid-grey;
+  background-image: url("../../assets/patterns/semi-circles.svg");
+  background-repeat: no-repeat;
+  padding: 2.5rem 1.5rem;
+  color: base.$white;
+  background-position: 80% 100%;
+  background-size: auto;
+
+  @media screen and (min-width: 38.75rem) {
+    background-position: 60% 100%;
+  }
+
+  
+}
+
+.aside__wrapper {
+  @media screen and (min-width: 67.5rem) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: auto;
+  }
+
+}
+.aside__deco {
+  max-width: 25rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+  gap: 1rem;
+}
+.google,
+.apple {
+  width: 100%;
+}
+
+.aside__deco--btn {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed base.$yellow;
+    outline-offset: 0.25em;
+  }
+}
+
+.aside__title {
+  text-align: center;
+  font-family: base.$secondary-font;
+  font-size: base.calculateRem(32);
+  letter-spacing: -1.43px;
+  line-height: 1.1;
+  padding-bottom: 3rem;
+  max-width: 28.5625rem;
+  margin: auto;
+  @media screen and (min-width: 38.75rem) {
+    font-size: base.calculateRem(48);
+  }
+  @media screen and (min-width: 67.5rem) {
+    text-align: left;
+  }
+}

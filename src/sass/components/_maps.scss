@@ -1,0 +1,149 @@
+@use '../base';
+
+.maps {
+  margin: auto;
+  padding: 0 2rem 2rem;
+  position: relative;
+}
+
+.map__image {
+  margin: 1rem auto 2.5rem;
+}
+
+.map__extras {
+  margin-top: 3.5rem;
+  text-align: center;
+  padding: 0 3.8rem;
+
+  @media screen and (min-width: 67.5rem) {
+	padding: 0 8.3125rem;
+    display: flex;
+	align-items: center;
+	gap: 3rem;
+  }
+}
+
+.city {
+  display: inline-block;
+  width: 100%;
+  max-width: 23.75rem;
+  background-color: base.$peach;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1.1rem;
+  font-size: base.calculateRem(24);
+  font-weight: 700;
+
+  @media screen and (min-width: 38.75rem) {
+    position: absolute;
+    background-color: base.$yellow;
+    max-width: 7.5rem;
+    font-size: base.calculateRem(13);
+    padding: 0.6rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      background-color: base.$yellow;
+      left: 50%;
+      bottom: -7px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.jakarta {
+  @media screen and (min-width: 38.75rem) {
+    top: 22%;
+    right: 18%;
+  }
+  @media screen and (min-width: 67.5rem) {
+    top: 30%;
+    right: 25%;
+  }
+}
+
+.yokohama {
+  @media screen and (min-width: 38.75rem) {
+    top: 7%;
+    right: 12%;
+  }
+  @media screen and (min-width: 67.5rem) {
+    top: 13%;
+    right: 20%;
+  }
+}
+
+.london {
+  @media screen and (min-width: 38.75rem) {
+    top: 2%;
+    right: 49%;
+  }
+  @media screen and (min-width: 67.5rem) {
+    top: 5%;
+    right: 52%;
+  }
+}
+
+.new__york {
+  @media screen and (min-width: 38.75rem) {
+    top: 6%;
+    right: 69%;
+  }
+  @media screen and (min-width: 67.5rem) {
+    top: 13%;
+    right: 69%;
+  }
+}
+
+.map__image__map {
+  margin: auto;
+}
+
+.location__select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__btn__wrapper__loc {
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  @media screen and (min-width: 67.5rem) {
+    flex: 1 1 18%;
+  }
+}
+
+.map__title {
+  font-size: base.calculateRem(32);
+  font-weight: 700;
+  color: base.$mid-mid-grey;
+  font-family: base.$secondary-font;
+  letter-spacing: -1.43px;
+  line-height: 1.2;
+
+  @media screen and (min-width: 38.75rem) {
+    font-size: base.calculateRem(48);
+  }
+
+  @media screen and (min-width: 67.5rem) {
+    flex: 1 1 25%;
+	text-align: left;
+  }
+}
+
+.map__content {
+  margin-top: 1.5rem;
+  color: base.$mid-lt-grey;
+  font-size: base.calculateRem(15);
+
+  @media screen and (min-width: 67.5rem) {
+    flex: 1 1 30%;
+	text-align: left;
+	margin-top: 0;
+  }
+}

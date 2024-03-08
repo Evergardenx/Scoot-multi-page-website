@@ -1,0 +1,267 @@
+//import HomeMobile from '../../assets/images/about-hero-mobile';
+@use '../base';
+
+.hero {
+  //  background-image: url("../../assets/images/about-hero-mobile.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 0%;
+  top: -0.3rem;
+
+  @media screen and (min-width: 38.75rem) {
+    // background-image: url("../../assets/images/home-hero-mobile.jpg");
+    overflow: hidden;
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url("../../assets/patterns/white-circles.svg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 25%;
+      //height: 70vh;
+      height: 100%;
+    }
+  }
+}
+
+.inner__img {
+  display: block;
+}
+
+.hero__title {
+  text-align: center;
+  font-size: base.calculateRem(40);
+  color: base.$white;
+  font-family: base.$secondary-font;
+  line-height: 1.2;
+
+  @media screen and (min-width: 38.75rem) {
+    font-size: base.calculateRem(56);
+  }
+  @media screen and (min-width: 67.5rem) {
+    text-align: left;
+  }
+}
+
+// HOME PAGE - HERO SECTION - IMAGE
+.hero__home {
+  background-image: url("../../assets/images/home-hero-mobile.jpg");
+  // background-size: 173%;
+  .hero__wrapper {
+    top: 6.5rem;
+    position: relative;
+    padding: 0 2rem;
+    max-width: 36.5rem;
+    margin: auto;
+  }
+
+  .inner__img {
+    padding-top: 76%;
+  }
+
+  .hero__content {
+    color: base.$white;
+    margin-top: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero__btn__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/patterns/right-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 0% 90%;
+    background-size: 100%;
+    top: 0;
+    left: -62%;
+  }
+
+  @media screen and (min-width: 38.75rem) {
+    background-image: url("../../assets/images/home-hero-tablet.jpg");
+
+    .hero__wrapper {
+      top: 8rem;
+      margin-left: 0;
+      max-width: 46.5rem;
+    }
+
+    .hero__btn__wrapper {
+      margin-top: 2rem;
+    }
+
+    .inner__img {
+      padding-top: 45%;
+    }
+
+    &::before {
+      background-size: 50%;
+      // background-position: 0% 60%;
+      left: 0%;
+    }
+
+    &::after {
+      right: -1.4rem;
+      top: 0;
+      background-position: 50% 90%;
+    }
+  }
+
+  @media screen and (min-width: 67.5rem) {
+    background-image: url("../../assets/images/home-hero-desktop.jpg");
+
+    .inner__img {
+      padding-top: 23%;
+    }
+
+    .hero__wrapper {
+      top: 9rem;
+      margin-left: 0;
+      padding: 0 0 0 10.3125rem;
+    }
+
+    .hero__content {
+      position: relative;
+      text-align: left;
+      padding-left: 3rem;
+      padding-right: 6rem;
+      line-height: 1.7;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("../../assets/patterns/line.svg");
+        background-repeat: no-repeat;
+        left: -10.3125rem;
+        top: 50%;
+      }
+    }
+
+    &::before {
+      background-size: 29%;
+      left: 50%;
+      top: -16%;
+    }
+
+    &::after {
+      background-size: 65%;
+      background-position: 100% 72%;
+    }
+  }
+}
+/* ---------------------------------------------------------- */
+
+//ABOUT PAGE - HERO SECTION - IMAGE
+.hero__about {
+  background-image: url("../../assets/images/about-hero-mobile.jpg");
+  .inner__img {
+    padding-top: 43%;
+  }
+
+  .hero__wrapper {
+    top: 3.2rem;
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  .hero__content {
+    display: none;
+  }
+  .hero__btn__wrapper {
+    display: none;
+  }
+
+  @media screen and (min-width: 38.75rem) {
+    background-image: url("../../assets/images/about-hero-tablet.jpg");
+
+    &::after {
+      top: 0;
+      right: -1.4rem;
+      height: 29%;
+      background-position: 0% 100%;
+    }
+  }
+
+  @media screen and (min-width: 67.5rem) {
+    background-image: url("../../assets/images/about-hero-desktop.jpg");
+
+    .inner__img {
+      padding-top: 14%;
+    }
+
+    &::after {
+      top: 0;
+      right: -2.5rem;
+      height: 100%;
+      background-position: 0% 30%;
+    }
+
+    .hero__wrapper {
+      padding: 0 10.3125rem;
+    }
+  }
+}
+/* -----------------------------------------------------*/
+
+// CAREERS & LOCATION - HERO SECTION - IMAGE
+.hero__careers,
+.hero__location {
+  background-image: url("../../assets/images/careers-location-hero-mobile.jpg");
+  .inner__img {
+    padding-top: 43%;
+  }
+  .hero__wrapper {
+    top: 3.2rem;
+    position: relative;
+    padding: 0 2rem;
+  }
+  .hero__content {
+    display: none;
+  }
+  .hero__btn__wrapper {
+    display: none;
+  }
+
+  @media screen and (min-width: 38.75rem) {
+    background-image: url("../../assets/images/careers-locations-hero-tablet.jpg");
+    .inner__img {
+      // padding-top: 85%;
+    }
+    &::after {
+      top: 0;
+      right: -1.4rem;
+      height: 29%;
+      background-position: 0% 100%;
+    }
+  }
+
+  @media screen and (min-width: 67.5rem) {
+    background-image: url("../../assets/images/careers-locations-hero-desktop.jpg");
+
+    .inner__img {
+      padding-top: 14%;
+    }
+
+    &::after {
+      top: 0;
+      right: -2.5rem;
+      height: 100%;
+      background-position: 0% 30%;
+    }
+
+    .hero__wrapper {
+      padding: 0 10.3125rem;
+    }
+  }
+}
